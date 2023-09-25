@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.top-menu {
+        background-color: white;
+        color: #007BFF;
+        padding: 0px 0;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        flex: 1 1 100%;
+        align-items: stretch;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 1px #090b6f85;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    ul.nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul.nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    ul.nav li:last-child {
+        margin-right: 0;
+    }
+
+    a.nav-link {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+    }
+
+    a.nav-link:hover {
+        color: #ff6600;
+    }
+
+    #login {
+        padding :8px;
+        background-color: #007BFF;
+        color:white;
+        border-radius:5px;
+    }
+
+    #myForm {
+        width:1600px;
+        background-color: white;
+
+        border-radius: 10px;
+        overflow: hidden;
+        flex: 1 1 100%;
+        align-items: stretch;
+        justify-content: space-between;
+        box-shadow: 0 0 5px 1px #090b6f85;
+    }
+
+    .container {
+        text-align: center; /* Center the text horizontally within the container */
+    }
+    
+    #studentsreg {
+        position: relative;
+        top: 0px;
+        color: #007BFF;
+    }
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: -20px;
+    
+    
+}
+
+
+
+label {
+    display: block;
+    margin: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 87%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left:15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#gender {
+    position:relative;
+    margin-top:-30px;
+    padding:7px;
+
+}
+
+input[type="radio"]{
+    width: 87%;
+    padding: 10px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;  
+    margin-left:-100px; 
+}
+
+
+
+#logo {
+    position: relative;
+    top: -100px;
+    width: 400px;
+    height: 100px;
+     
+}
+
+select#gender {
+width: 87%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: white;
+font-size: 16px; 
+color: #333; 
+margin-left:15px;
+}
+
+select#nationality {
+    width: 87%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px; 
+    color: #333; 
+    margin-left:15px;
+    }
+
+select#department {
+width: 87%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: white;
+font-size: 16px; 
+color: #333;
+margin-left:15px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 70px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; 
+    margin: 0 auto; 
+    margin-bottom: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

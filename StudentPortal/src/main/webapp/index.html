@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link  rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <div class="top-menu">
+        <div class="container">
+            <ul class="nav">
+                <li><a class="nav-link" href="Register.html">Register</a></li>
+                <li><a class="nav-link" id="login" href="index.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="container">
+    <form id="myForm" action="signin" method="POST">
+        <img src="public/images/pexels-keira-burton-61472761.jpg" alt="Image" class="side-image">
+        <!-- <img  id="logo" src="cropped-AUCA-logo-wide-webblue-2-1-1.png"> -->
+        <h2 style="color: #007BFF;">Sign In</h2>
+        <div class="inputs">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+        <p class="error" id="emailError"></p>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <p class="error" id="passwordError"></p>
+        <a href="Register.html" id="link">You Do Not Have an Account? Click Here to create one</a>
+        <br>
+        <a href="forgotpassword.html" id="link">Forgot Your Password?</a>
+
+        <button type="submit">Submit</button>
+    </div>
+        
+    </form>
+    
+</div>
+<script>
+const form = document.getElementById('myForm');
+form.addEventListener('submit', function (e) {
+    if (!isFormValid()) {
+        e.preventDefault(); 
+    }
+});
+
+function isFormValid() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    let isValid = true;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (email === '') {
+        displayError('emailError', 'Please enter an email address');
+        isValid = false;
+    } else if (!emailRegex.test(email)) {
+        displayError('emailError', 'Please enter a valid email address');
+        isValid = false;
+    } else {
+        hideError('emailError');
+    }
+
+    if (password.length < 8) {
+        displayError('passwordError', 'Password must be 8 or more characters');
+        isValid = false;
+    } else {
+        hideError('passwordError');
+    }
+
+    return isValid;
+}
+
+function displayError(id, message) {
+    const errorElement = document.getElementById(id);
+    errorElement.textContent = message;
+    errorElement.style.color = 'red';
+}
+
+function hideError(id) {
+    const errorElement = document.getElementById(id);
+    errorElement.textContent = '';
+}
+</script>
+
+    
+</body>
+</html>

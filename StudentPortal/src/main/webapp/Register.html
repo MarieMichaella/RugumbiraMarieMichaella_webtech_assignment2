@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+</head>
+<link rel="stylesheet" href="public/css/Register.css">
+<body>
+    <header>
+    <div class="top-menu">
+        <div class="container">
+            <ul class="nav">
+                <li><a class="nav-link" href="Register.html">Register</a></li>
+                <li><a class="nav-link" id="login" href="index.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="form-container">
+    
+    <div class="container">
+        <h2 id="studentsreg">Sign Up</h2>
+    </div>
+
+		<form id="myForm"> 
+        <label for="sname">Student ID</label>
+        <input type="text" id="sname" name="sname" placeholder="Student ID">
+        <p class="error" id="snameError"></p>
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="First Name">
+        <p class="error" id="fnameError"></p>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Last Name">
+        <p class="error" id="lnameError"></p>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+        <p class="error" id="emailError"></p>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Phone Number">
+        <p class="error" id="phoneError"></p>
+
+        <label for="age">Date Of Birth</label>
+        <input type="date" id="age" name="age">
+        <p class="error" id="ageError"></p>
+
+        <label>Gender</label>
+        <select id="gender" name="gender">
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+    	</select>
+        <p class="error" id="genderError"></p>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Location">
+        <p class="error" id="locationError"></p>
+
+        <label for="nationality">Nationality</label>
+		<select id="nationality" name="nationality">
+    <option value="afghan">Afghan</option>
+    <option value="albanian">Albanian</option>
+    <option value="algerian">Algerian</option>
+    <option value="american">American</option>
+    <option value="andorran">Andorran</option>
+    <option value="angolan">Angolan</option>
+    <option value="antiguans">Antiguans</option>
+    <option value="argentinean">Argentinean</option>
+    <option value="armenian">Armenian</option>
+    <option value="australian">Australian</option>
+    <option value="austrian">Austrian</option>
+    <option value="azerbaijani">Azerbaijani</option>
+    <option value="bahamian">Bahamian</option>
+    <option value="bahraini">Bahraini</option>
+    <option value="bangladeshi">Bangladeshi</option>
+    <option value="barbadian">Barbadian</option>
+    <option value="barbudans">Barbudans</option>
+    <option value="batswana">Batswana</option>
+    <option value="belarusian">Belarusian</option>
+    <option value="belgian">Belgian</option>
+    <option value="belizean">Belizean</option>
+    <option value="beninese">Beninese</option>
+    <option value="bhutanese">Bhutanese</option>
+    <option value="bolivian">Bolivian</option>
+    <option value="bosnian">Bosnian</option>
+    <option value="brazilian">Brazilian</option>
+    <option value="british">British</option>
+    <option value="bruneian">Bruneian</option>
+    <option value="bulgarian">Bulgarian</option>
+    <option value="burkinabe">Burkinabe</option>
+    <option value="burmese">Burmese</option>
+    <option value="burundian">Burundian</option>
+    <option value="cambodian">Cambodian</option>
+    <option value="cameroonian">Cameroonian</option>
+    <option value="canadian">Canadian</option>
+    <option value="cape verdean">Cape Verdean</option>
+    <option value="central african">Central African</option>
+    <option value="chadian">Chadian</option>
+    <option value="chilean">Chilean</option>
+    <option value="chinese">Chinese</option>
+    <option value="colombian">Colombian</option>
+    <option value="comoran">Comoran</option>
+    <option value="congolese">Congolese</option>
+    <option value="costa rican">Costa Rican</option>
+    <option value="croatian">Croatian</option>
+    <option value="cuban">Cuban</option>
+    <option value="cypriot">Cypriot</option>
+    <option value="czech">Czech</option>
+    <option value="danish">Danish</option>
+    <option value="djibouti">Djibouti</option>
+    <option value="dominican">Dominican</option>
+    <option value="dutch">Dutch</option>
+    <option value="east timorese">East Timorese</option>
+    <option value="ecuadorean">Ecuadorean</option>
+    <option value="egyptian">Egyptian</option>
+    <option value="emirian">Emirian</option>
+    <option value="equatorial guinean">Equatorial Guinean</option>
+    <option value="eritrean">Eritrean</option>
+    <option value="estonian">Estonian</option>
+    <option value="ethiopian">Ethiopian</option>
+    <option value="fijian">Fijian</option>
+    <option value="filipino">Filipino</option>
+    <option value="finnish">Finnish</option>
+    <option value="french">French</option>
+    <option value="gabonese">Gabonese</option>
+    <option value="gambian">Gambian</option>
+    <option value="georgian">Georgian</option>
+    <option value="german">German</option>
+    <option value="ghanaian">Ghanaian</option>
+    <option value="greek">Greek</option>
+    <option value="grenadian">Grenadian</option>
+    <option value="guatemalan">Guatemalan</option>
+    <option value="guinea-bissauan">Guinea-Bissauan</option>
+    <option value="guinean">Guinean</option>
+    <option value="guyanese">Guyanese</option>
+    <option value="haitian">Haitian</option>
+    <option value="herzegovinian">Herzegovinian</option>
+    <option value="honduran">Honduran</option>
+    <option value="hungarian">Hungarian</option>
+    <option value="icelander">Icelander</option>
+    <option value="indian">Indian</option>
+    <option value="indonesian">Indonesian</option>
+    <option value="iranian">Iranian</option>
+    <option value="iraqi">Iraqi</option>
+    <option value="irish">Irish</option>
+    <option value="israeli">Israeli</option>
+    <option value="italian">Italian</option>
+    <option value="ivorian">Ivorian</option>
+    <option value="jamaican">Jamaican</option>
+    <option value="japanese">Japanese</option>
+    <option value="jordanian">Jordanian</option>
+    <option value="kazakhstani">Kazakhstani</option>
+    <option value="kenyan">Kenyan</option>
+    <option value="kittian and nevisian">Kittian and Nevisian</option>
+    <option value="kuwaiti">Kuwaiti</option>
+    <option value="kyrgyz">Kyrgyz</option>
+    <option value="laotian">Laotian</option>
+    <option value="latvian">Latvian</option>
+    <option value="lebanese">Lebanese</option>
+    <option value="lesotho">Lesotho</option>
+    <option value="liberian">Liberian</option>
+    <option value="libyan">Libyan</option>
+    <option value="liechtensteiner">Liechtensteiner</option>
+    <option value="lithuanian">Lithuanian</option>
+    <option value="luxembourger">Luxembourger</option>
+    <option value="macedonian">Macedonian</option>
+    <option value="malagasy">Malagasy</option>
+    <option value="malawian">Malawian</option>
+    <option value="malaysian">Malaysian</option>
+    <option value="maldivan">Maldivan</option>
+    <option value="malian">Malian</option>
+    <option value="maltese">Maltese</option>
+    <option value="marshallese">Marshallese</option>
+    <option value="mauritanian">Mauritanian</option>
+    <option value="mauritian">Mauritian</option>
+    <option value="mexican">Mexican</option>
+    <option value="micronesian">Micronesian</option>
+    <option value="moldovan">Moldovan</option>
+    <option value="monacan">Monacan</option>
+    <option value="mongolian">Mongolian</option>
+    <option value="moroccan">Moroccan</option>
+    <option value="mosotho">Mosotho</option>
+    <option value="motswana">Motswana</option>
+    <option value="mozambican">Mozambican</option>
+    <option value="namibian">Namibian</option>
+    <option value="nauruan">Nauruan</option>
+    <option value="nepalese">Nepalese</option>
+    <option value="new zealander">New Zealander</option>
+    <option value="ni-vanuatu">Ni-Vanuatu</option>
+    <option value="nicaraguan">Nicaraguan</option>
+    <option value="nigerien">Nigerien</option>
+    <option value="north korean">North Korean</option>
+    <option value="northern irish">Northern Irish</option>
+    <option value="norwegian">Norwegian</option>
+    <option value="omani">Omani</option>
+    <option value="pakistani">Pakistani</option>
+    <option value="palauan">Palauan</option>
+    <option value="panamanian">Panamanian</option>
+    <option value="papua new guinean">Papua New Guinean</option>
+    <option value="paraguayan">Paraguayan</option>
+    <option value="peruvian">Peruvian</option>
+    <option value="polish">Polish</option>
+    <option value="portuguese">Portuguese</option>
+    <option value="qatari">Qatari</option>
+    <option value="romanian">Romanian</option>
+    <option value="russian">Russian</option>
+    <option value="rwandan">Rwandan</option>
+    <option value="saint lucian">Saint Lucian</option>
+    <option value="salvadoran">Salvadoran</option>
+    <option value="samoan">Samoan</option>
+    <option value="san marinese">San Marinese</option>
+    <option value="sao tomean">Sao Tomean</option>
+    <option value="saudi">Saudi</option>
+    <option value="scottish">Scottish</option>
+    <option value="senegalese">Senegalese</option>
+    <option value="serbian">Serbian</option>
+    <option value="seychellois">Seychellois</option>
+    <option value="sierra leonean">Sierra Leonean</option>
+    <option value="singaporean">Singaporean</option>
+    <option value="slovakian">Slovakian</option>
+    <option value="slovenian">Slovenian</option>
+    <option value="solomon islander">Solomon Islander</option>
+    <option value="somali">Somali</option>
+    <option value="south african">South African</option>
+    <option value="south korean">South Korean</option>
+    <option value="spanish">Spanish</option>
+    <option value="sri lankan">Sri Lankan</option>
+    <option value="sudanese">Sudanese</option>
+    <option value="surinamer">Surinamer</option>
+    <option value="swazi">Swazi</option>
+    <option value="swedish">Swedish</option>
+    <option value="swiss">Swiss</option>
+    <option value="syrian">Syrian</option>
+    <option value="taiwanese">Taiwanese</option>
+    <option value="tajik">Tajik</option>
+    <option value="tanzanian">Tanzanian</option>
+    <option value="thai">Thai</option>
+    <option value="togolese">Togolese</option>
+    <option value="tongan">Tongan</option>
+    <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+    <option value="tunisian">Tunisian</option>
+    <option value="turkish">Turkish</option>
+    <option value="tuvaluan">Tuvaluan</option>
+    <option value="ugandan">Ugandan</option>
+    <option value="ukrainian">Ukrainian</option>
+    <option value="uruguayan">Uruguayan</option>
+    <option value="uzbekistani">Uzbekistani</option>
+    <option value="venezuelan">Venezuelan</option>
+    <option value="vietnamese">Vietnamese</option>
+    <option value="welsh">Welsh</option>
+    <option value="yemenite">Yemenite</option>
+    <option value="zambian">Zambian</option>
+    <option value="zimbabwean">Zimbabwean</option>
+</select>
+		<p class="error" id="nationalityError"></p>
+
+
+		<label for="department">Program/Department</label>
+		<select id="department" name="department">
+	    <option value="Information Management">Marketing</option>
+	    <option value="Information Management">Finance</option>
+	    <option value="Information Management">Information Management</option>
+	    <option value="Networking and Communication">Networking and Communication</option>
+	    <option value="Software Engineering">Software Engineering</option>
+		</select>
+		<p class="error" id="departmentError"></p>
+	
+	        <label for="emergency">Emergency Contact</label>
+	        <input type="text" id="emergency" name="emergency" placeholder="Emergency Contact">
+	        <p class="error" id="emergencyError"></p>
+	
+	        <label for="password">Password</label>
+	        <input type="password" id="password" name="password" placeholder="Password">
+	        <p class="error" id="passwordError"></p>
+	
+	        <label for="confirmpassword"> Confirm Password</label>
+	        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+	        <p class="error" id="confirmpasswordError"></p>
+	
+	        <button type="submit">Submit</button>
+	    </div>
+	</form>
+
+    <script>
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (isFormValid()) {
+                window.location.href = 'welcome.html';
+    }
+        });
+
+        function isFormValid() {
+            const fname = document.getElementById('fname').value.trim();
+            const lname = document.getElementById('lname').value.trim();
+            const sname = document.getElementById('sname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const location = document.getElementById('location').value.trim();
+            const nationality = document.getElementById('nationality').value.trim();
+            const department = document.getElementById('department').value.trim();
+            const emergency = document.getElementById('emergency').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmpassword').value.trim();
+
+            let isValid = true;
+
+            var emailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (fname === '') {
+                displayError('fnameError', 'First name is required');
+                isValid = false;
+            } else {
+                hideError('fnameError');
+            }
+
+            if (lname === '') {
+                displayError('lnameError', 'Last name is required');
+                isValid = false;
+            } else {
+                hideError('lnameError');
+            }
+            if (email === '') {
+    displayError('emailError', 'Please enter an email address');
+    isValid = false;
+} else if (!emailformat.test(email)) {
+    displayError('emailError', 'Please enter a valid email address');
+    isValid = false;
+} else {
+    hideError('emailError');
+}
+
+            if (phone === "") {
+            displayError('phoneError', 'Phone Number is Required');
+            isValid = false;
+            } else if (phone.length !== 10) {
+            displayError('phoneError', 'Phone Number must be 10 characters');
+            isValid = false;
+            } else {
+            hideError('phoneError');
+            }
+
+            if(age === ""){
+                displayError('ageError', 'Date Of Birth is Required');
+                isvalid = false;
+            } 
+             else {
+                hideError('ageError');
+            }
+
+
+            if (location === '') {
+                displayError('locationError', 'Location is required');
+                isValid = false;
+            } else {
+                hideError('locationError');
+            }
+
+            if (nationality === '') {
+                displayError('nationalityError', 'Nationality is required');
+                isValid = false;
+            } else {
+                hideError('nationalityError');
+            }
+
+            if (department === '') {
+                displayError('departmentError', 'Department is required');
+                isValid = false;
+            } else {
+                hideError('departmentError');
+            }
+
+            if (emergency === '') {
+            displayError('emergencyError', 'Emergency contact is required');
+            isValid = false;
+            } else if (emergency.length !== 10) {
+            displayError('emergencyError', 'Emergency contact must be 10 characters');
+            isValid = false;
+            } else {
+            hideError('emergencyError');
+            }
+
+            const snamePattern = /^\d{5}$/;
+
+if (sname === '') {
+    displayError('snameError', 'Student ID is required');
+    isValid = false;
+} else if (!snamePattern.test(sname)) {
+    displayError('snameError', 'Student ID must be 5 numbers');
+    isValid = false;
+} else {
+    hideError('snameError');
+}
+
+            if (password === '') {
+        displayError('passwordError', 'Password is required');
+        isValid = false;
+    } else if (password.length < 8) {
+        displayError('passwordError', 'Password must be at least 8 characters');
+        isValid = false;
+    } else {
+        hideError('passwordError');
+    }
+
+    if (confirmPassword === '') {
+        displayError('confirmpasswordError', 'Confirm Password is required');
+        isValid = false;
+    } else if (confirmPassword !== password) {
+        displayError('confirmpasswordError', 'Passwords do not match');
+        isValid = false;
+    } else {
+        hideError('confirmpasswordError');
+    }
+
+            return isValid;
+        }
+
+        function displayError(id, message) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = message;
+            errorElement.style.color = 'red';
+        }
+
+        function hideError(id) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = '';
+        }
+        
+    </script>
+</body>
+</html>

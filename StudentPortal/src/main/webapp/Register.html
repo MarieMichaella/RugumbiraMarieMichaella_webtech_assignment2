@@ -16,282 +16,291 @@
             </ul>
         </div>
     </div>
+   
+
 </header>
+ <select id="languageSelect">
+    <option value="en">English</option>
+    <option value="fr">French</option>
+    <option value="rw">Kinyarwanda</option> <!-- Add Kinyarwanda as an option -->
+    <!-- Add more language options as needed -->
+</select>
 <div class="form-container">
     
     <div class="container">
-        <h2 id="studentsreg">Sign Up</h2>
+        <h2 id="studentsreg" data-i18n="Signup">Sign Up</h2>
     </div>
 
-		<form id="myForm"> 
-        <label for="sname">Student ID</label>
-        <input type="text" id="sname" name="sname" placeholder="Student ID">
-        <p class="error" id="snameError"></p>
+<form id="myForm" action="admissionServlet" method="POST">
+    <label for="sname" data-i18n="student_id_label">Student ID</label>
+    <input type="text" id="sname" name="sname" placeholder="Student ID" data-i18n="student_id_placeholder">
+    <p class="error" id="snameError" data-i18n="student_id_error"></p>
 
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="First Name">
-        <p class="error" id="fnameError"></p>
+    <label for="fname" data-i18n="first_name_label">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="First Name" data-i18n="first_name_placeholder">
+    <p class="error" id="fnameError" data-i18n="first_name_error"></p>
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Last Name">
-        <p class="error" id="lnameError"></p>
+    <label for="lname" data-i18n="last_name_label">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Last Name" data-i18n="last_name_placeholder">
+    <p class="error" id="lnameError" data-i18n="last_name_error"></p>
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Email">
-        <p class="error" id="emailError"></p>
+    <label for="email" data-i18n="email_label">Email</label>
+    <input type="text" id="email" name="email" placeholder="Email" data-i18n="email_placeholder">
+    <p class="error" id="emailError" data-i18n="email_error"></p>
 
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" name="phone" placeholder="Phone Number">
-        <p class="error" id="phoneError"></p>
+    <label for="phone" data-i18n="phone_label">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="Phone Number" data-i18n="phone_placeholder">
+    <p class="error" id="phoneError" data-i18n="phone_error"></p>
 
-        <label for="age">Date Of Birth</label>
-        <input type="date" id="age" name="age">
-        <p class="error" id="ageError"></p>
+    <label for="age" data-i18n="dob_label">Date Of Birth</label>
+    <input type="date" id="age" name="age">
+    <p class="error" id="ageError" data-i18n="dob_error"></p>
 
-        <label>Gender</label>
-        <select id="gender" name="gender">
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-    	</select>
-        <p class="error" id="genderError"></p>
+    <label data-i18n="gender_label">Gender</label>
+    <select id="gender" name="gender" data-i18n="gender_placeholder">
+        <option value="female" data-i18n="female_option">Female</option>
+        <option value="male" data-i18n="male_option">Male</option>
+    </select>
+    <p class="error" id="genderError" data-i18n="gender_error"></p>
 
-        <label for="location">Location</label>
-        <input type="text" id="location" name="location" placeholder="Location">
-        <p class="error" id="locationError"></p>
-
-        <label for="nationality">Nationality</label>
-		<select id="nationality" name="nationality">
-    <option value="afghan">Afghan</option>
-    <option value="albanian">Albanian</option>
-    <option value="algerian">Algerian</option>
-    <option value="american">American</option>
-    <option value="andorran">Andorran</option>
-    <option value="angolan">Angolan</option>
-    <option value="antiguans">Antiguans</option>
-    <option value="argentinean">Argentinean</option>
-    <option value="armenian">Armenian</option>
-    <option value="australian">Australian</option>
-    <option value="austrian">Austrian</option>
-    <option value="azerbaijani">Azerbaijani</option>
-    <option value="bahamian">Bahamian</option>
-    <option value="bahraini">Bahraini</option>
-    <option value="bangladeshi">Bangladeshi</option>
-    <option value="barbadian">Barbadian</option>
-    <option value="barbudans">Barbudans</option>
-    <option value="batswana">Batswana</option>
-    <option value="belarusian">Belarusian</option>
-    <option value="belgian">Belgian</option>
-    <option value="belizean">Belizean</option>
-    <option value="beninese">Beninese</option>
-    <option value="bhutanese">Bhutanese</option>
-    <option value="bolivian">Bolivian</option>
-    <option value="bosnian">Bosnian</option>
-    <option value="brazilian">Brazilian</option>
-    <option value="british">British</option>
-    <option value="bruneian">Bruneian</option>
-    <option value="bulgarian">Bulgarian</option>
-    <option value="burkinabe">Burkinabe</option>
-    <option value="burmese">Burmese</option>
-    <option value="burundian">Burundian</option>
-    <option value="cambodian">Cambodian</option>
-    <option value="cameroonian">Cameroonian</option>
-    <option value="canadian">Canadian</option>
-    <option value="cape verdean">Cape Verdean</option>
-    <option value="central african">Central African</option>
-    <option value="chadian">Chadian</option>
-    <option value="chilean">Chilean</option>
-    <option value="chinese">Chinese</option>
-    <option value="colombian">Colombian</option>
-    <option value="comoran">Comoran</option>
-    <option value="congolese">Congolese</option>
-    <option value="costa rican">Costa Rican</option>
-    <option value="croatian">Croatian</option>
-    <option value="cuban">Cuban</option>
-    <option value="cypriot">Cypriot</option>
-    <option value="czech">Czech</option>
-    <option value="danish">Danish</option>
-    <option value="djibouti">Djibouti</option>
-    <option value="dominican">Dominican</option>
-    <option value="dutch">Dutch</option>
-    <option value="east timorese">East Timorese</option>
-    <option value="ecuadorean">Ecuadorean</option>
-    <option value="egyptian">Egyptian</option>
-    <option value="emirian">Emirian</option>
-    <option value="equatorial guinean">Equatorial Guinean</option>
-    <option value="eritrean">Eritrean</option>
-    <option value="estonian">Estonian</option>
-    <option value="ethiopian">Ethiopian</option>
-    <option value="fijian">Fijian</option>
-    <option value="filipino">Filipino</option>
-    <option value="finnish">Finnish</option>
-    <option value="french">French</option>
-    <option value="gabonese">Gabonese</option>
-    <option value="gambian">Gambian</option>
-    <option value="georgian">Georgian</option>
-    <option value="german">German</option>
-    <option value="ghanaian">Ghanaian</option>
-    <option value="greek">Greek</option>
-    <option value="grenadian">Grenadian</option>
-    <option value="guatemalan">Guatemalan</option>
-    <option value="guinea-bissauan">Guinea-Bissauan</option>
-    <option value="guinean">Guinean</option>
-    <option value="guyanese">Guyanese</option>
-    <option value="haitian">Haitian</option>
-    <option value="herzegovinian">Herzegovinian</option>
-    <option value="honduran">Honduran</option>
-    <option value="hungarian">Hungarian</option>
-    <option value="icelander">Icelander</option>
-    <option value="indian">Indian</option>
-    <option value="indonesian">Indonesian</option>
-    <option value="iranian">Iranian</option>
-    <option value="iraqi">Iraqi</option>
-    <option value="irish">Irish</option>
-    <option value="israeli">Israeli</option>
-    <option value="italian">Italian</option>
-    <option value="ivorian">Ivorian</option>
-    <option value="jamaican">Jamaican</option>
-    <option value="japanese">Japanese</option>
-    <option value="jordanian">Jordanian</option>
-    <option value="kazakhstani">Kazakhstani</option>
-    <option value="kenyan">Kenyan</option>
-    <option value="kittian and nevisian">Kittian and Nevisian</option>
-    <option value="kuwaiti">Kuwaiti</option>
-    <option value="kyrgyz">Kyrgyz</option>
-    <option value="laotian">Laotian</option>
-    <option value="latvian">Latvian</option>
-    <option value="lebanese">Lebanese</option>
-    <option value="lesotho">Lesotho</option>
-    <option value="liberian">Liberian</option>
-    <option value="libyan">Libyan</option>
-    <option value="liechtensteiner">Liechtensteiner</option>
-    <option value="lithuanian">Lithuanian</option>
-    <option value="luxembourger">Luxembourger</option>
-    <option value="macedonian">Macedonian</option>
-    <option value="malagasy">Malagasy</option>
-    <option value="malawian">Malawian</option>
-    <option value="malaysian">Malaysian</option>
-    <option value="maldivan">Maldivan</option>
-    <option value="malian">Malian</option>
-    <option value="maltese">Maltese</option>
-    <option value="marshallese">Marshallese</option>
-    <option value="mauritanian">Mauritanian</option>
-    <option value="mauritian">Mauritian</option>
-    <option value="mexican">Mexican</option>
-    <option value="micronesian">Micronesian</option>
-    <option value="moldovan">Moldovan</option>
-    <option value="monacan">Monacan</option>
-    <option value="mongolian">Mongolian</option>
-    <option value="moroccan">Moroccan</option>
-    <option value="mosotho">Mosotho</option>
-    <option value="motswana">Motswana</option>
-    <option value="mozambican">Mozambican</option>
-    <option value="namibian">Namibian</option>
-    <option value="nauruan">Nauruan</option>
-    <option value="nepalese">Nepalese</option>
-    <option value="new zealander">New Zealander</option>
-    <option value="ni-vanuatu">Ni-Vanuatu</option>
-    <option value="nicaraguan">Nicaraguan</option>
-    <option value="nigerien">Nigerien</option>
-    <option value="north korean">North Korean</option>
-    <option value="northern irish">Northern Irish</option>
-    <option value="norwegian">Norwegian</option>
-    <option value="omani">Omani</option>
-    <option value="pakistani">Pakistani</option>
-    <option value="palauan">Palauan</option>
-    <option value="panamanian">Panamanian</option>
-    <option value="papua new guinean">Papua New Guinean</option>
-    <option value="paraguayan">Paraguayan</option>
-    <option value="peruvian">Peruvian</option>
-    <option value="polish">Polish</option>
-    <option value="portuguese">Portuguese</option>
-    <option value="qatari">Qatari</option>
-    <option value="romanian">Romanian</option>
-    <option value="russian">Russian</option>
-    <option value="rwandan">Rwandan</option>
-    <option value="saint lucian">Saint Lucian</option>
-    <option value="salvadoran">Salvadoran</option>
-    <option value="samoan">Samoan</option>
-    <option value="san marinese">San Marinese</option>
-    <option value="sao tomean">Sao Tomean</option>
-    <option value="saudi">Saudi</option>
-    <option value="scottish">Scottish</option>
-    <option value="senegalese">Senegalese</option>
-    <option value="serbian">Serbian</option>
-    <option value="seychellois">Seychellois</option>
-    <option value="sierra leonean">Sierra Leonean</option>
-    <option value="singaporean">Singaporean</option>
-    <option value="slovakian">Slovakian</option>
-    <option value="slovenian">Slovenian</option>
-    <option value="solomon islander">Solomon Islander</option>
-    <option value="somali">Somali</option>
-    <option value="south african">South African</option>
-    <option value="south korean">South Korean</option>
-    <option value="spanish">Spanish</option>
-    <option value="sri lankan">Sri Lankan</option>
-    <option value="sudanese">Sudanese</option>
-    <option value="surinamer">Surinamer</option>
-    <option value="swazi">Swazi</option>
-    <option value="swedish">Swedish</option>
-    <option value="swiss">Swiss</option>
-    <option value="syrian">Syrian</option>
-    <option value="taiwanese">Taiwanese</option>
-    <option value="tajik">Tajik</option>
-    <option value="tanzanian">Tanzanian</option>
-    <option value="thai">Thai</option>
-    <option value="togolese">Togolese</option>
-    <option value="tongan">Tongan</option>
-    <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
-    <option value="tunisian">Tunisian</option>
-    <option value="turkish">Turkish</option>
-    <option value="tuvaluan">Tuvaluan</option>
-    <option value="ugandan">Ugandan</option>
-    <option value="ukrainian">Ukrainian</option>
-    <option value="uruguayan">Uruguayan</option>
-    <option value="uzbekistani">Uzbekistani</option>
-    <option value="venezuelan">Venezuelan</option>
-    <option value="vietnamese">Vietnamese</option>
-    <option value="welsh">Welsh</option>
-    <option value="yemenite">Yemenite</option>
-    <option value="zambian">Zambian</option>
-    <option value="zimbabwean">Zimbabwean</option>
-</select>
-		<p class="error" id="nationalityError"></p>
-
-
-		<label for="department">Program/Department</label>
-		<select id="department" name="department">
-	    <option value="Information Management">Marketing</option>
-	    <option value="Information Management">Finance</option>
-	    <option value="Information Management">Information Management</option>
-	    <option value="Networking and Communication">Networking and Communication</option>
-	    <option value="Software Engineering">Software Engineering</option>
-		</select>
-		<p class="error" id="departmentError"></p>
+    <label for="location" data-i18n="location_label">Location</label>
+    <input type="text" id="location" name="location" placeholder="Location" data-i18n="location_placeholder">
+    <p class="error" id="locationError" data-i18n="location_error"></p>
 	
-	        <label for="emergency">Emergency Contact</label>
-	        <input type="text" id="emergency" name="emergency" placeholder="Emergency Contact">
-	        <p class="error" id="emergencyError"></p>
+	        <label for="nationality">Nationality</label>
+			<select id="nationality" name="nationality">
+	    <option value="afghan">Afghan</option>
+	    <option value="albanian">Albanian</option>
+	    <option value="algerian">Algerian</option>
+	    <option value="american">American</option>
+	    <option value="andorran">Andorran</option>
+	    <option value="angolan">Angolan</option>
+	    <option value="antiguans">Antiguans</option>
+	    <option value="argentinean">Argentinean</option>
+	    <option value="armenian">Armenian</option>
+	    <option value="australian">Australian</option>
+	    <option value="austrian">Austrian</option>
+	    <option value="azerbaijani">Azerbaijani</option>
+	    <option value="bahamian">Bahamian</option>
+	    <option value="bahraini">Bahraini</option>
+	    <option value="bangladeshi">Bangladeshi</option>
+	    <option value="barbadian">Barbadian</option>
+	    <option value="barbudans">Barbudans</option>
+	    <option value="batswana">Batswana</option>
+	    <option value="belarusian">Belarusian</option>
+	    <option value="belgian">Belgian</option>
+	    <option value="belizean">Belizean</option>
+	    <option value="beninese">Beninese</option>
+	    <option value="bhutanese">Bhutanese</option>
+	    <option value="bolivian">Bolivian</option>
+	    <option value="bosnian">Bosnian</option>
+	    <option value="brazilian">Brazilian</option>
+	    <option value="british">British</option>
+	    <option value="bruneian">Bruneian</option>
+	    <option value="bulgarian">Bulgarian</option>
+	    <option value="burkinabe">Burkinabe</option>
+	    <option value="burmese">Burmese</option>
+	    <option value="burundian">Burundian</option>
+	    <option value="cambodian">Cambodian</option>
+	    <option value="cameroonian">Cameroonian</option>
+	    <option value="canadian">Canadian</option>
+	    <option value="cape verdean">Cape Verdean</option>
+	    <option value="central african">Central African</option>
+	    <option value="chadian">Chadian</option>
+	    <option value="chilean">Chilean</option>
+	    <option value="chinese">Chinese</option>
+	    <option value="colombian">Colombian</option>
+	    <option value="comoran">Comoran</option>
+	    <option value="congolese">Congolese</option>
+	    <option value="costa rican">Costa Rican</option>
+	    <option value="croatian">Croatian</option>
+	    <option value="cuban">Cuban</option>
+	    <option value="cypriot">Cypriot</option>
+	    <option value="czech">Czech</option>
+	    <option value="danish">Danish</option>
+	    <option value="djibouti">Djibouti</option>
+	    <option value="dominican">Dominican</option>
+	    <option value="dutch">Dutch</option>
+	    <option value="east timorese">East Timorese</option>
+	    <option value="ecuadorean">Ecuadorean</option>
+	    <option value="egyptian">Egyptian</option>
+	    <option value="emirian">Emirian</option>
+	    <option value="equatorial guinean">Equatorial Guinean</option>
+	    <option value="eritrean">Eritrean</option>
+	    <option value="estonian">Estonian</option>
+	    <option value="ethiopian">Ethiopian</option>
+	    <option value="fijian">Fijian</option>
+	    <option value="filipino">Filipino</option>
+	    <option value="finnish">Finnish</option>
+	    <option value="french">French</option>
+	    <option value="gabonese">Gabonese</option>
+	    <option value="gambian">Gambian</option>
+	    <option value="georgian">Georgian</option>
+	    <option value="german">German</option>
+	    <option value="ghanaian">Ghanaian</option>
+	    <option value="greek">Greek</option>
+	    <option value="grenadian">Grenadian</option>
+	    <option value="guatemalan">Guatemalan</option>
+	    <option value="guinea-bissauan">Guinea-Bissauan</option>
+	    <option value="guinean">Guinean</option>
+	    <option value="guyanese">Guyanese</option>
+	    <option value="haitian">Haitian</option>
+	    <option value="herzegovinian">Herzegovinian</option>
+	    <option value="honduran">Honduran</option>
+	    <option value="hungarian">Hungarian</option>
+	    <option value="icelander">Icelander</option>
+	    <option value="indian">Indian</option>
+	    <option value="indonesian">Indonesian</option>
+	    <option value="iranian">Iranian</option>
+	    <option value="iraqi">Iraqi</option>
+	    <option value="irish">Irish</option>
+	    <option value="israeli">Israeli</option>
+	    <option value="italian">Italian</option>
+	    <option value="ivorian">Ivorian</option>
+	    <option value="jamaican">Jamaican</option>
+	    <option value="japanese">Japanese</option>
+	    <option value="jordanian">Jordanian</option>
+	    <option value="kazakhstani">Kazakhstani</option>
+	    <option value="kenyan">Kenyan</option>
+	    <option value="kittian and nevisian">Kittian and Nevisian</option>
+	    <option value="kuwaiti">Kuwaiti</option>
+	    <option value="kyrgyz">Kyrgyz</option>
+	    <option value="laotian">Laotian</option>
+	    <option value="latvian">Latvian</option>
+	    <option value="lebanese">Lebanese</option>
+	    <option value="lesotho">Lesotho</option>
+	    <option value="liberian">Liberian</option>
+	    <option value="libyan">Libyan</option>
+	    <option value="liechtensteiner">Liechtensteiner</option>
+	    <option value="lithuanian">Lithuanian</option>
+	    <option value="luxembourger">Luxembourger</option>
+	    <option value="macedonian">Macedonian</option>
+	    <option value="malagasy">Malagasy</option>
+	    <option value="malawian">Malawian</option>
+	    <option value="malaysian">Malaysian</option>
+	    <option value="maldivan">Maldivan</option>
+	    <option value="malian">Malian</option>
+	    <option value="maltese">Maltese</option>
+	    <option value="marshallese">Marshallese</option>
+	    <option value="mauritanian">Mauritanian</option>
+	    <option value="mauritian">Mauritian</option>
+	    <option value="mexican">Mexican</option>
+	    <option value="micronesian">Micronesian</option>
+	    <option value="moldovan">Moldovan</option>
+	    <option value="monacan">Monacan</option>
+	    <option value="mongolian">Mongolian</option>
+	    <option value="moroccan">Moroccan</option>
+	    <option value="mosotho">Mosotho</option>
+	    <option value="motswana">Motswana</option>
+	    <option value="mozambican">Mozambican</option>
+	    <option value="namibian">Namibian</option>
+	    <option value="nauruan">Nauruan</option>
+	    <option value="nepalese">Nepalese</option>
+	    <option value="new zealander">New Zealander</option>
+	    <option value="ni-vanuatu">Ni-Vanuatu</option>
+	    <option value="nicaraguan">Nicaraguan</option>
+	    <option value="nigerien">Nigerien</option>
+	    <option value="north korean">North Korean</option>
+	    <option value="northern irish">Northern Irish</option>
+	    <option value="norwegian">Norwegian</option>
+	    <option value="omani">Omani</option>
+	    <option value="pakistani">Pakistani</option>
+	    <option value="palauan">Palauan</option>
+	    <option value="panamanian">Panamanian</option>
+	    <option value="papua new guinean">Papua New Guinean</option>
+	    <option value="paraguayan">Paraguayan</option>
+	    <option value="peruvian">Peruvian</option>
+	    <option value="polish">Polish</option>
+	    <option value="portuguese">Portuguese</option>
+	    <option value="qatari">Qatari</option>
+	    <option value="romanian">Romanian</option>
+	    <option value="russian">Russian</option>
+	    <option value="rwandan">Rwandan</option>
+	    <option value="saint lucian">Saint Lucian</option>
+	    <option value="salvadoran">Salvadoran</option>
+	    <option value="samoan">Samoan</option>
+	    <option value="san marinese">San Marinese</option>
+	    <option value="sao tomean">Sao Tomean</option>
+	    <option value="saudi">Saudi</option>
+	    <option value="scottish">Scottish</option>
+	    <option value="senegalese">Senegalese</option>
+	    <option value="serbian">Serbian</option>
+	    <option value="seychellois">Seychellois</option>
+	    <option value="sierra leonean">Sierra Leonean</option>
+	    <option value="singaporean">Singaporean</option>
+	    <option value="slovakian">Slovakian</option>
+	    <option value="slovenian">Slovenian</option>
+	    <option value="solomon islander">Solomon Islander</option>
+	    <option value="somali">Somali</option>
+	    <option value="south african">South African</option>
+	    <option value="south korean">South Korean</option>
+	    <option value="spanish">Spanish</option>
+	    <option value="sri lankan">Sri Lankan</option>
+	    <option value="sudanese">Sudanese</option>
+	    <option value="surinamer">Surinamer</option>
+	    <option value="swazi">Swazi</option>
+	    <option value="swedish">Swedish</option>
+	    <option value="swiss">Swiss</option>
+	    <option value="syrian">Syrian</option>
+	    <option value="taiwanese">Taiwanese</option>
+	    <option value="tajik">Tajik</option>
+	    <option value="tanzanian">Tanzanian</option>
+	    <option value="thai">Thai</option>
+	    <option value="togolese">Togolese</option>
+	    <option value="tongan">Tongan</option>
+	    <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+	    <option value="tunisian">Tunisian</option>
+	    <option value="turkish">Turkish</option>
+	    <option value="tuvaluan">Tuvaluan</option>
+	    <option value="ugandan">Ugandan</option>
+	    <option value="ukrainian">Ukrainian</option>
+	    <option value="uruguayan">Uruguayan</option>
+	    <option value="uzbekistani">Uzbekistani</option>
+	    <option value="venezuelan">Venezuelan</option>
+	    <option value="vietnamese">Vietnamese</option>
+	    <option value="welsh">Welsh</option>
+	    <option value="yemenite">Yemenite</option>
+	    <option value="zambian">Zambian</option>
+	    <option value="zimbabwean">Zimbabwean</option>
+	</select>
+			<p class="error" id="nationalityError"></p>
 	
-	        <label for="password">Password</label>
-	        <input type="password" id="password" name="password" placeholder="Password">
-	        <p class="error" id="passwordError"></p>
 	
-	        <label for="confirmpassword"> Confirm Password</label>
-	        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
-	        <p class="error" id="confirmpasswordError"></p>
-	
-	        <button type="submit">Submit</button>
-	    </div>
-	</form>
+    <label for="department" data-i18n="department_label">Program/Department</label>
+    <select id="department" name="department" data-i18n="department_placeholder">
+        <option value="Information Management" data-i18n="marketing_option">Marketing</option>
+        <!-- Add more department options with data-i18n attributes -->
+    </select>
+    <p class="error" id="departmentError" data-i18n="department_error"></p>
 
-    <script>
-        const form = document.getElementById('myForm');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (isFormValid()) {
-                window.location.href = 'welcome.html';
-    }
-        });
+    <label for="emergency" data-i18n="emergency_contact_label">Emergency Contact</label>
+    <input type="text" id="emergency" name="emergency" placeholder="Emergency Contact" data-i18n="emergency_contact_placeholder">
+    <p class="error" id="emergencyError" data-i18n="emergency_contact_error"></p>
+
+    <label for="imageUpload" data-i18n="passport_picture_label">Upload Passport Picture:</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="image/jpeg, image/png">
+
+    <label for="pdfUpload" data-i18n="diploma_certificate_label">Diploma Certificate</label>
+    <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
+
+    <label for="password" data-i18n="password_label">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password" data-i18n="password_placeholder">
+    <p class="error" id="passwordError" data-i18n="password_error"></p>
+
+    <label for="confirmpassword" data-i18n="confirm_password_label">Confirm Password Change</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" data-i18n="confirm_password_placeholder">
+    <p class="error" id="confirmpasswordError" data-i18n="confirm_password_error"></p>
+
+    <button type="submit" data-i18n="submit_button">Submit</button>
+</form>
+</div>
+	       <script>
+	       const form = document.getElementById('myForm');
+	       form.addEventListener('submit', function (e) {
+	           if (!isFormValid()) {
+	               e.preventDefault(); 
+	           }
+	       });
 
         function isFormValid() {
             const fname = document.getElementById('fname').value.trim();
@@ -306,6 +315,7 @@
             const emergency = document.getElementById('emergency').value.trim();
             const password = document.getElementById('password').value.trim();
             const confirmPassword = document.getElementById('confirmpassword').value.trim();
+            
 
             let isValid = true;
 
@@ -430,6 +440,149 @@ if (sname === '') {
             errorElement.textContent = '';
         }
         
+        const languageSelect = document.getElementById('languageSelect');
+        const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+
+        languageSelect.addEventListener('change', function () {
+           const selectedLanguage = languageSelect.value;
+
+           elementsToTranslate.forEach((element) => {
+              const translationKey = element.getAttribute('data-i18n');
+              // Load the translation for the selected language and set it as the text content.
+              element.textContent = translations[selectedLanguage][translationKey];
+           });
+        });
+        
+        const translations = {
+        		'en': {
+        		    'student_id_label': 'Student ID',
+        		    'student_id_placeholder': 'Student ID',
+        		    'student_id_error': 'Student ID is required',
+        		    'first_name_label': 'First Name',
+        		    'first_name_placeholder': 'First Name',
+        		    'first_name_error': 'First name is required',
+        		    'last_name_label': 'Last Name',
+        		    'last_name_placeholder': 'Last Name',
+        		    'last_name_error': 'Last name is required',
+        		    'email_label': 'Email',
+        		    'email_placeholder': 'Email',
+        		    'email_error': 'Please enter a valid email address',
+        		    'phone_label': 'Phone Number',
+        		    'phone_placeholder': 'Phone Number',
+        		    'phone_error': 'Please enter a valid phone number',
+        		    'dob_label': 'Date Of Birth',
+        		    'dob_error': 'Date of Birth is required',
+        		    'gender_label': 'Gender',
+        		    'gender_placeholder': 'Gender',
+        		    'location_label': 'Location',
+        		    'location_placeholder': 'Location',
+        		    'location_error': 'Location is required',
+        		    'nationality_label': 'Nationality',
+        		    'nationality_error': 'Nationality is required',
+        		    'department_label': 'Program/Department',
+        		    'department_placeholder': 'Program/Department',
+        		    'department_error': 'Department is required',
+        		    'emergency_contact_label': 'Emergency Contact',
+        		    'emergency_contact_placeholder': 'Emergency Contact',
+        		    'emergency_contact_error': 'Emergency contact is required',
+        		    'passport_picture_label': 'Upload Passport Picture:',
+        		    'diploma_certificate_label': 'Diploma Certificate',
+        		    'password_label': 'Password',
+        		    'password_placeholder': 'Password',
+        		    'password_error': 'Password is required',
+        		    'confirm_password_label': 'Confirm Password Change',
+        		    'confirm_password_placeholder': 'Confirm Password',
+        		    'confirm_password_error': 'Passwords do not match',
+        		    'Signup': 'SignUp'
+        		},
+
+                'fr': {
+                    'student_id_label': 'Identifiant de l\'étudiant',
+                    'student_id_placeholder': 'Identifiant de l\'étudiant',
+                    'student_id_error': 'L\'identifiant de l\'étudiant est requis',
+                    'first_name_label': 'Prénom',
+                    'first_name_placeholder': 'Prénom',
+                    'first_name_error': 'Le prénom est requis',
+                    'last_name_label': 'Nom de famille',
+                    'last_name_placeholder': 'Nom de famille',
+                    'last_name_error': 'Le nom de famille est requis',
+                    'email_label': 'Email',
+                    'email_placeholder': 'Email',
+                    'email_error': 'Veuillez entrer une adresse email valide',
+                    'phone_label': 'Numéro de téléphone',
+                    'phone_placeholder': 'Numéro de téléphone',
+                    'phone_error': 'Veuillez entrer un numéro de téléphone valide',
+                    'dob_label': 'Date de naissance',
+                    'dob_error': 'La date de naissance est requise',
+                    'gender_label': 'Genre',
+                    'gender_placeholder': 'Genre',
+                    'location_label': 'Emplacement',
+                    'location_placeholder': 'Emplacement',
+                    'location_error': 'L\'emplacement est requis',
+                    'nationality_label': 'Nationalité',
+                    'nationality_error': 'La nationalité est requise',
+                    'department_label': 'Programme/Département',
+                    'department_placeholder': 'Programme/Département',
+                    'department_error': 'Le département est requis',
+                    'emergency_contact_label': 'Contact d\'urgence',
+                    'emergency_contact_placeholder': 'Contact d\'urgence',
+                    'emergency_contact_error': 'Le contact d\'urgence est requis',
+                    'passport_picture_label': 'Télécharger une photo de passeport',
+                    'diploma_certificate_label': 'Certificat de diplôme',
+                    'password_label': 'Mot de passe',
+                    'password_placeholder': 'Mot de passe',
+                    'password_error': 'Le mot de passe est requis',
+                    'confirm_password_label': 'Confirmez le changement de mot de passe',
+                    'confirm_password_placeholder': 'Confirmez le mot de passe',
+                    'confirm_password_error': 'Les mots de passe ne correspondent pas',
+                    'Signup': 'S’inscrire'
+                },
+                'rw': {
+                    'student_id_label': 'Nimero y\'ishuri',
+                    'student_id_placeholder': 'Nimero y\'ishuri',
+                    'student_id_error': 'Nimero y\'ishuri ni ngombwa',
+                    'first_name_label': 'Izina ry\'umuntu wa mbere',
+                    'first_name_placeholder': 'Izina ry\'umuntu wa mbere',
+                    'first_name_error': 'Izina ry\'umuntu wa mbere ni ngombwa',
+                    'last_name_label': 'Izina ry\'umuntu wa nyuma',
+                    'last_name_placeholder': 'Izina ry\'umuntu wa nyuma',
+                    'last_name_error': 'Izina ry\'umuntu wa nyuma ni ngombwa',
+                    'email_label': 'Imayili',
+                    'email_placeholder': 'Imayili',
+                    'email_error': 'Nimwinjire imayili ishobora ntakoze',
+                    'phone_label': 'Nomero ya telefone',
+                    'phone_placeholder': 'Nomero ya telefone',
+                    'phone_error': 'Nimwinjire nomero ya telefone ishobora ntakoze',
+                    'dob_label': 'Itariki y\'amavuko',
+                    'dob_error': 'Itariki y\'amavuko ni ngombwa',
+                    'gender_label': 'Igitsina',
+                    'gender_placeholder': 'Igitsina',
+                    'location_label': 'Aho utuye',
+                    'location_placeholder': 'Aho utuye',
+                    'location_error': 'Aho utuye ni ngombwa',
+                    'nationality_label': 'Ubwenegihugu',
+                    'nationality_error': 'Ubwenegihugu ni ngombwa',
+                    'department_label': 'Programu/Idenyeri',
+                    'department_placeholder': 'Programu/Idenyeri',
+                    'department_error': 'Idenyeri ni ngombwa',
+                    'emergency_contact_label': 'Igihugu cya rimwe',
+                    'emergency_contact_placeholder': 'Igihugu cya rimwe',
+                    'emergency_contact_error': 'Igihugu cya rimwe ni ngombwa',
+                    'passport_picture_label': 'Tangira inkuru y\'akatoni',
+                    'diploma_certificate_label': 'Igihugu cya rimwe',
+                    'password_label': 'Ijambo ry\'ibanga',
+                    'password_placeholder': 'Ijambo ry\'ibanga',
+                    'password_error': 'Ijambo ry\'ibanga ni ngombwa',
+                    'confirm_password_label': 'Emeza ivyo ufise',
+                    'confirm_password_placeholder': 'Emeza ivyo ufise',
+                    'confirm_password_error': 'Ijambo ry\'ibanga ntiwarabura',
+                    	'Signup': 'Kwiyandikisha'
+                },
+
+                // Add translations for other languages as needed...
+            };
+        
     </script>
+
 </body>
 </html>

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link  rel="stylesheet" href="public/css/style.css">
 </head>
+
+
 <body>
     <div class="top-menu">
         <div class="container">
             <ul class="nav">
-                <li><a class="nav-link" href="Register.html">Register</a></li>
+                <!-- <li><a class="nav-link" href="Register.html">Register</a></li> -->
                 <li><a class="nav-link" id="login" href="index.html">Login</a></li>
             </ul>
         </div>
     </div>
-    
-    
+
 <select id="languageSelect">
     <option value="en">English</option>
     <option value="fr">French</option>
@@ -24,23 +25,29 @@
     <!-- Add more language options as needed -->
 </select>
 
+
     
     <div class="container">
-    <form id="myForm" action="signin" method="POST">
+    <form id="myForm">
         <img src="public/images/pexels-keira-burton-61472761.jpg" alt="Image" class="side-image">
         <!-- <img  id="logo" src="cropped-AUCA-logo-wide-webblue-2-1-1.png"> -->
-        <h2 style="color: #007BFF;" data-i18n="sign_in">Sign In</h2>
+        <h2 style="color: #007BFF;" data-i18n="sign_in">Sign Up</h2>
+        
+
         <div class="inputs">
         <label for="email" data-i18n="email_label">Email</label>
-        <input type="text" id="email" name="email" placeholder="Email">
+        <input type="text" id="email" name="email" placeholder="Email" data-i18n="email_placeholder">
         <p class="error" id="emailError"></p>
 
         <label for="password" data-i18n="password_label">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password">
+        <input type="password" id="password" name="password" placeholder="Password" data-i18n="password_placeholder" >
         <p class="error" id="passwordError"></p>
-        <a href="Signup.html" id="link" data-i18n="haveaccount">You Do Not Have an Account? Click Here to create one</a>
-        <br>
-        <a href="forgotpassword.html" id="link" data-i18n="Nopassword">Forgot Your Password?</a>
+
+        <label for="confirmpassword" data-i18n="confirmpassword_label"> Confirm Password</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+        <p class="error" id="confirmpasswordError"></p>
+
+        <a href="index.html" id="link" data-i18n="haveaccount">You Already have an account? Click Here To Login</a>
 
         <button type="submit" data-i18n="submit">Submit</button>
     </div>
@@ -48,54 +55,68 @@
     </form>
     
 </div>
-<script>
+    <script>
 const form = document.getElementById('myForm');
 form.addEventListener('submit', function (e) {
-    if (!isFormValid()) {
-        e.preventDefault(); 
+    e.preventDefault();
+    if (isFormValid()) {
+        window.location.href = 'Register.html';
     }
 });
 
-function isFormValid() {
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+        function isFormValid() {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmpassword').value.trim();
 
-    let isValid = true;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            let isValid = true;
 
-    if (email === '') {
-        displayError('emailError', 'Please enter an email address');
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (email === '') {
+            displayError('emailError', 'Please enter an email address');
+            isValid = false;
+            } else if (!emailRegex.test(email)) {
+            displayError('emailError', 'Please enter a valid email address');
+            isValid = false;
+        } else {
+            hideError('emailError');
+        }
+
+            if (password.length < 8) {
+                displayError('passwordError', 'Password must be 8 or more characters');
+                isValid = false;
+            } else {
+                hideError('passwordError');
+            }
+
+            if (confirmPassword === '') {
+        displayError('confirmpasswordError', 'Confirm Password is required');
         isValid = false;
-    } else if (!emailRegex.test(email)) {
-        displayError('emailError', 'Please enter a valid email address');
+    } else if (confirmPassword !== password) {
+        displayError('confirmpasswordError', 'Passwords do not match');
         isValid = false;
     } else {
-        hideError('emailError');
+        hideError('confirmpasswordError');
     }
 
-    if (password.length < 8) {
-        displayError('passwordError', 'Password must be 8 or more characters');
-        isValid = false;
-    } else {
-        hideError('passwordError');
-    }
 
-    return isValid;
-}
+            return isValid;
+        }
 
-function displayError(id, message) {
-    const errorElement = document.getElementById(id);
-    errorElement.textContent = message;
-    errorElement.style.color = 'red';
-}
+        function displayError(id, message) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = message;
+            errorElement.style.color = 'red';
+        }
 
-function hideError(id) {
-    const errorElement = document.getElementById(id);
-    errorElement.textContent = '';
-}
+        function hideError(id) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = '';
+        }
 
 
-const languageSelect = document.getElementById('languageSelect');
+        const languageSelect = document.getElementById('languageSelect');
 const elementsToTranslate = document.querySelectorAll('[data-i18n]');
 
 languageSelect.addEventListener('change', function () {
@@ -122,7 +143,6 @@ const translations = {
 	        'confirmpassword_label': 'Confirm Password', // Add translation for Confirm Password
 	        'haveaccount': 'You Already have an account? Click Here To Login',
 	        'submit': 'Submit',
-	        'Nopassword' : 'Forgot Your Password?'
 	    },
 	    'fr': {
 	        'sign_in': 'Se Connecter',
@@ -136,7 +156,6 @@ const translations = {
 	        'confirmpassword_label': 'Confirmer le mot de passe', // Add translation for Confirm Password
 	        'haveaccount': 'Vous avez déjà un compte ? Cliquez ici pour vous connecter',
 	        'submit': 'Soumettre',
-	        'Nopassword' : 'Avez vous oubliez votre mot de passe?'
 	    },
 	    'rw': { // Add translations for Kinyarwanda
 	        'sign_in': 'Injira',
@@ -150,12 +169,13 @@ const translations = {
 	        'confirmpassword_label': 'Emeza Ijambo banga', // Add translation for Confirm Password
 	        'haveaccount': 'Wowe nta konti? Kanda hano kugerageza kwinjira',
 	        'submit': 'Emeza',
-	        'Nopassword' : 'Mwibagiwe Ijambo ryibanga?'
 	    },
 	    // Add translations for other languages
 	};
-</script>
 
-    
+
+
+        
+    </script>
 </body>
 </html>

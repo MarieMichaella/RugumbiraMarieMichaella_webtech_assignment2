@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
 <display-name>LOGIN PAGE</display-name>
+
+	<servlet>
+    <servlet-name>AdmissionServlet</servlet-name>
+    <servlet-class>studentPortal.AdmissionServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+    <servlet-name>AdmissionServlet</servlet-name>
+    <url-pattern>/admissionServlet</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>Signin</servlet-name>
     <servlet-class>studentPortal.Signin</servlet-class>
@@ -10,10 +21,24 @@
     <servlet-name>Signin</servlet-name>
     <url-pattern>/signin</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+    <filter-name>LoggingFilter</filter-name>
+    <filter-class>studentPortal.LoggingFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>LoggingFilter</filter-name>
+    <url-pattern>/filter</url-pattern>
+</filter-mapping>
+  
+  
   <welcome-file-list>
   
   <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  
+
 
 </web-app>
 

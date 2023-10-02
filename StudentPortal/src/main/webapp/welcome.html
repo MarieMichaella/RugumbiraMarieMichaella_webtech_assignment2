@@ -111,10 +111,47 @@ color: #ff6600;
             </div>
         </div>
     </header>
-    <h3 style="color: #007BFF;">Welcome To The Home Page</h3>
+    <select id="languageSelect">
+    <option value="en">English</option>
+    <option value="fr">French</option>
+    <option value="rw">Kinyarwanda</option>
+</select>
+
+    <h3 style="color: #007BFF;" data-i18n="welcome">Welcome To The Home Page</h3>
     <div class="container">
     <!-- <img id="image" src="pexels-keira-burton-61472761.jpg"> -->
 </div>
 
+
+<script>
+const languageSelect = document.getElementById('languageSelect');
+const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+
+languageSelect.addEventListener('change', function () {
+   const selectedLanguage = languageSelect.value;
+
+   elementsToTranslate.forEach((element) => {
+      const translationKey = element.getAttribute('data-i18n');
+      // Load the translation for the selected language and set it as the text content.
+      element.textContent = translations[selectedLanguage][translationKey];
+   });
+});
+
+
+const translations = {
+	    'en': {
+	        'welcome': 'Welcome To The Home Page'
+
+	    },
+	    'fr': {
+	    	'welcome': 'Bienvenue A La Page'
+
+	    },
+	    'rw': { // Add translations for Kinyarwanda
+	    	'welcome': 'Murakaza Neza',
+	    },
+	    // Add translations for other languages
+	};
+	</script>
 </body>
 </html>

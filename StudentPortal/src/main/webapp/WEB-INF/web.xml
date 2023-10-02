@@ -23,15 +23,26 @@
   </servlet-mapping>
   
   <filter>
-    <filter-name>LoggingFilter</filter-name>
+    <filter-name>FilterSignin</filter-name>
     <filter-class>studentPortal.LoggingFilter</filter-class>
 </filter>
 
 <filter-mapping>
-    <filter-name>LoggingFilter</filter-name>
-    <url-pattern>/filter</url-pattern>
+    <filter-name>FilterSignin</filter-name>
+    <url-pattern>/signin</url-pattern>
+</filter-mapping>
+
+  <filter>
+    <filter-name>FilterLogin</filter-name>
+    <filter-class>studentPortal.LoggingFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>FilterLogin</filter-name>
+    <url-pattern>/admissionServlet</url-pattern>
 </filter-mapping>
   
+
   
   <welcome-file-list>
   

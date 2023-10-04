@@ -57,7 +57,7 @@
     <p class="error" id="ageError" data-i18n="dob_error"></p>
 
     <label data-i18n="gender_label">Gender</label>
-    <select id="gender" name="gender" data-i18n="gender_placeholder">
+    <select id="gender" name="gender" >
         <option value="female" data-i18n="female_option">Female</option>
         <option value="male" data-i18n="male_option">Male</option>
     </select>
@@ -267,8 +267,9 @@
 	
 	
     <label for="department" data-i18n="department_label">Program/Department</label>
-    <select id="department" name="department" data-i18n="department_placeholder">
+    <select id="department" name="department" >
         <option value="Information Management" data-i18n="marketing_option">Marketing</option>
+        <option value="Information Management" data-i18n="information_management_option">Information Management</option>
         <!-- Add more department options with data-i18n attributes -->
     </select>
     <p class="error" id="departmentError" data-i18n="department_error"></p>
@@ -279,22 +280,22 @@
 
     <label for="imageUpload" data-i18n="passport_picture_label">Upload Passport Picture:</label>
     <input type="file" id="imageUpload" name="imageUpload" accept="image/jpeg, image/png">
+    <p class="error" id="imageUploadError" data-i18n="image_upload_error"></p>
 
     <label for="pdfUpload" data-i18n="diploma_certificate_label">Diploma Certificate</label>
     <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
-
-    <label for="password" data-i18n="password_label">Password</label>
-    <input type="password" id="password" name="password" placeholder="Password" data-i18n="password_placeholder">
-    <p class="error" id="passwordError" data-i18n="password_error"></p>
-
-    <label for="confirmpassword" data-i18n="confirm_password_label">Confirm Password Change</label>
-    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" data-i18n="confirm_password_placeholder">
-    <p class="error" id="confirmpasswordError" data-i18n="confirm_password_error"></p>
+    <p class="error" id="pdfUploadError" data-i18n="pdf_upload_error"></p>
 
     <button type="submit" data-i18n="submit_button">Submit</button>
 </form>
 </div>
 	       <script>
+	       
+	       var urlParams = new URLSearchParams(window.location.search);
+	       var sessionMessages = urlParams.get("sessionMessages");
+	       if (sessionMessages) {
+	           document.getElementById("sessionMessages").innerHTML = sessionMessages;
+	       }
 	       const form = document.getElementById('myForm');
 	       form.addEventListener('submit', function (e) {
 	           if (!isFormValid()) {
@@ -313,11 +314,25 @@
             const nationality = document.getElementById('nationality').value.trim();
             const department = document.getElementById('department').value.trim();
             const emergency = document.getElementById('emergency').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const confirmPassword = document.getElementById('confirmpassword').value.trim();
+            const imageUpload = document.getElementById('imageUpload');
+            const pdfUpload = document.getElementById('pdfUpload');
             
 
             let isValid = true;
+            
+            if (imageUpload.files.length === 0) {
+                displayError('imageUploadError', 'Passport picture is required');
+                isValid = false;
+            } else {
+                hideError('imageUploadError');
+            }
+
+            if (pdfUpload.files.length === 0) {
+                displayError('pdfUploadError', 'Diploma certificate is required');
+                isValid = false;
+            } else {
+                hideError('pdfUploadError');
+            }
 
             var emailformat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
@@ -406,26 +421,6 @@ if (sname === '') {
     hideError('snameError');
 }
 
-            if (password === '') {
-        displayError('passwordError', 'Password is required');
-        isValid = false;
-    } else if (password.length < 8) {
-        displayError('passwordError', 'Password must be at least 8 characters');
-        isValid = false;
-    } else {
-        hideError('passwordError');
-    }
-
-    if (confirmPassword === '') {
-        displayError('confirmpasswordError', 'Confirm Password is required');
-        isValid = false;
-    } else if (confirmPassword !== password) {
-        displayError('confirmpasswordError', 'Passwords do not match');
-        isValid = false;
-    } else {
-        hideError('confirmpasswordError');
-    }
-
             return isValid;
         }
 
@@ -472,8 +467,6 @@ if (sname === '') {
         		    'phone_error': 'Please enter a valid phone number',
         		    'dob_label': 'Date Of Birth',
         		    'dob_error': 'Date of Birth is required',
-        		    'gender_label': 'Gender',
-        		    'gender_placeholder': 'Gender',
         		    'location_label': 'Location',
         		    'location_placeholder': 'Location',
         		    'location_error': 'Location is required',
@@ -487,13 +480,17 @@ if (sname === '') {
         		    'emergency_contact_error': 'Emergency contact is required',
         		    'passport_picture_label': 'Upload Passport Picture:',
         		    'diploma_certificate_label': 'Diploma Certificate',
-        		    'password_label': 'Password',
-        		    'password_placeholder': 'Password',
-        		    'password_error': 'Password is required',
-        		    'confirm_password_label': 'Confirm Password Change',
-        		    'confirm_password_placeholder': 'Confirm Password',
-        		    'confirm_password_error': 'Passwords do not match',
-        		    'Signup': 'SignUp'
+        		    'Signup': 'SignUp',
+        		    'gender_label': 'Gender',
+        		    	    'gender_placeholder': 'Gender',
+        		    	    'female_option': 'Female',  // Add translations for the options
+        		    	    'male_option': 'Male',
+        		    	    'department_label': 'Program/Department',
+        		            'department_placeholder': 'Program/Department',
+        		            'department_error': 'Department is required',
+        		            'marketing_option': 'Marketing',  // Add translations for the options
+        		            'information_management_option': 'Information Management',
+        		            'submit_button': 'Submit'
         		},
 
                 'fr': {
@@ -514,8 +511,6 @@ if (sname === '') {
                     'phone_error': 'Veuillez entrer un numéro de téléphone valide',
                     'dob_label': 'Date de naissance',
                     'dob_error': 'La date de naissance est requise',
-                    'gender_label': 'Genre',
-                    'gender_placeholder': 'Genre',
                     'location_label': 'Emplacement',
                     'location_placeholder': 'Emplacement',
                     'location_error': 'L\'emplacement est requis',
@@ -529,13 +524,17 @@ if (sname === '') {
                     'emergency_contact_error': 'Le contact d\'urgence est requis',
                     'passport_picture_label': 'Télécharger une photo de passeport',
                     'diploma_certificate_label': 'Certificat de diplôme',
-                    'password_label': 'Mot de passe',
-                    'password_placeholder': 'Mot de passe',
-                    'password_error': 'Le mot de passe est requis',
-                    'confirm_password_label': 'Confirmez le changement de mot de passe',
-                    'confirm_password_placeholder': 'Confirmez le mot de passe',
-                    'confirm_password_error': 'Les mots de passe ne correspondent pas',
-                    'Signup': 'S’inscrire'
+                    'Signup': 'S’inscrire',
+                    'gender_label': 'Genre',
+                    'gender_placeholder': 'Genre',
+                    'female_option': 'Femme',  // Add translations for the options in French
+                    'male_option': 'Homme',
+                    'department_label': 'Programme/Département',
+                    'department_placeholder': 'Programme/Département',
+                    'department_error': 'Le département est requis',
+                    'marketing_option': 'Marketing',  // Add translations for the options in French
+                    'information_management_option': 'Gestion de linformation',
+                    'submit_button': 'Soumettre'
                 },
                 'rw': {
                     'student_id_label': 'Nimero y\'ishuri',
@@ -555,8 +554,6 @@ if (sname === '') {
                     'phone_error': 'Nimwinjire nomero ya telefone ishobora ntakoze',
                     'dob_label': 'Itariki y\'amavuko',
                     'dob_error': 'Itariki y\'amavuko ni ngombwa',
-                    'gender_label': 'Igitsina',
-                    'gender_placeholder': 'Igitsina',
                     'location_label': 'Aho utuye',
                     'location_placeholder': 'Aho utuye',
                     'location_error': 'Aho utuye ni ngombwa',
@@ -570,16 +567,18 @@ if (sname === '') {
                     'emergency_contact_error': 'Igihugu cya rimwe ni ngombwa',
                     'passport_picture_label': 'Tangira inkuru y\'akatoni',
                     'diploma_certificate_label': 'Igihugu cya rimwe',
-                    'password_label': 'Ijambo ry\'ibanga',
-                    'password_placeholder': 'Ijambo ry\'ibanga',
-                    'password_error': 'Ijambo ry\'ibanga ni ngombwa',
-                    'confirm_password_label': 'Emeza ivyo ufise',
-                    'confirm_password_placeholder': 'Emeza ivyo ufise',
-                    'confirm_password_error': 'Ijambo ry\'ibanga ntiwarabura',
-                    	'Signup': 'Kwiyandikisha'
+                    	'Signup': 'Kwiyandikisha',
+                        'gender_label': 'Genre',
+                        'female_option': 'Gore',  // Add translations for the options in French
+                        'male_option': 'Gabo',
+                        'department_label': 'Programu/Idenyeri',
+                        'department_placeholder': 'Programu/Idenyeri',
+                        'department_error': 'Idenyeri ni ngombwa',
+                        'marketing_option': 'Ikigo cya Marketing',  // Add translations for the options in Kinyarwanda
+                        'information_management_option': 'Ikigo cyubutabera',
+                        'submit_button': 'Emeza'
                 },
 
-                // Add translations for other languages as needed...
             };
         
     </script>

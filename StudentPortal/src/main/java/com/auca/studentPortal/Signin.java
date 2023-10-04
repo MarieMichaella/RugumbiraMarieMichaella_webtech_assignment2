@@ -1,4 +1,4 @@
-package studentPortal;
+package com.auca.studentPortal;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,22 +13,21 @@ import javax.servlet.http.HttpSession;
 //@WebServlet("/signin")
 public class Signin extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    	
-
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
         try {
             PrintWriter out = res.getWriter();
-            HttpSession session = req.getSession(); // Get or create a session
+            HttpSession session = req.getSession();
 
             if (email != null && password != null) {
                 if (email.equalsIgnoreCase("michaellamarie@gmail.com") && password.equalsIgnoreCase("Michaella")) {
-                    // Store user information in the session
-                    session.setAttribute("userEmail", email);
-                    out.println("Welcome, " + email);
-                    res.sendRedirect("welcome.html"); // Redirect to a welcome page
 
+                    session.setAttribute("userEmail", email);
+                    String sessionId = session.getId();
+
+                    // Redirect to welcome.html with email, password, and sessionId as parameters
+                    res.sendRedirect("welcome.html?email=" + email + "&password=" + password + "&sessionId=" + sessionId);
                 } else {
                     out.println("Invalid email or password");
                     res.sendRedirect("forgotpassword.html");
@@ -37,14 +36,12 @@ public class Signin extends HttpServlet {
                 out.println("Please provide both email and password.");
             }
 
-         // Check if a session has been created
             if (session.isNew()) {
                 out.println("A new session has been created with ID: " + session.getId());
             } else {
                 out.println("Session ID: " + session.getId());
                 out.println("Welcome back!");
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();

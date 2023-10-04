@@ -1,4 +1,4 @@
-package email;
+package com.auca.email;
 
 import java.util.Properties;
 import javax.mail.MessagingException;

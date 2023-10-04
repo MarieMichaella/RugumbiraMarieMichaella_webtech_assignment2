@@ -1,4 +1,4 @@
-package studentPortal;
+package com.auca.studentPortal;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import email.SendEmail;
+import com.auca.email.SendEmail;
 
 //@WebServlet("/admissionServlet")
 public class AdmissionServlet extends HttpServlet {
@@ -32,7 +32,7 @@ public class AdmissionServlet extends HttpServlet {
               
                 session.setAttribute("userEmail", email);
 
-              
+              //session.getId()
                 response.setContentType("text/html");
 
                 
@@ -42,7 +42,7 @@ public class AdmissionServlet extends HttpServlet {
                 String userEmail = (String) session.getAttribute("userEmail");
                 if (userEmail != null) {
                     out.println("<html><body>");
-                    out.println("<h1>Session is working. User email: " + userEmail + "</h1>");
+                    out.println("<h3>Session is working. User email: " + userEmail + "</h3>");
                     out.println("</body></html>");
                 } else {
                     out.println("<html><body>");

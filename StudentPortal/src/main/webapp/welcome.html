@@ -117,6 +117,9 @@ color: #ff6600;
     <option value="rw">Kinyarwanda</option>
 </select>
 
+<p id="sessionIdDisplay"></p>
+    <p id="emailDisplay"></p>
+    <p id="passwordDisplay"></p>
     <h3 style="color: #007BFF;" data-i18n="welcome">Welcome To The Home Page</h3>
     <div class="container">
     <!-- <img id="image" src="pexels-keira-burton-61472761.jpg"> -->
@@ -124,6 +127,25 @@ color: #ff6600;
 
 
 <script>
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Get the sessionId, email, and password parameters from the URL
+var sessionId = getUrlParameter('sessionId');
+var email = getUrlParameter('email');
+var password = getUrlParameter('password');
+
+// Display the sessionId, email, and password in the respective <p> elements
+document.getElementById('sessionIdDisplay').textContent = 'Session ID: ' + sessionId;
+document.getElementById('emailDisplay').textContent = 'Email: ' + email;
+document.getElementById('passwordDisplay').textContent = 'Password: ' + password;
+
+
 const languageSelect = document.getElementById('languageSelect');
 const elementsToTranslate = document.querySelectorAll('[data-i18n]');
 
@@ -147,10 +169,10 @@ const translations = {
 	    	'welcome': 'Bienvenue A La Page'
 
 	    },
-	    'rw': { // Add translations for Kinyarwanda
+	    'rw': { 
 	    	'welcome': 'Murakaza Neza',
 	    },
-	    // Add translations for other languages
+	   
 	};
 	</script>
 </body>

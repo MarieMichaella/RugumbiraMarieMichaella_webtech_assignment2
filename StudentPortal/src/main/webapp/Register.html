@@ -290,12 +290,6 @@
 </form>
 </div>
 	       <script>
-	       
-	       var urlParams = new URLSearchParams(window.location.search);
-	       var sessionMessages = urlParams.get("sessionMessages");
-	       if (sessionMessages) {
-	           document.getElementById("sessionMessages").innerHTML = sessionMessages;
-	       }
 	       const form = document.getElementById('myForm');
 	       form.addEventListener('submit', function (e) {
 	           if (!isFormValid()) {
